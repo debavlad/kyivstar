@@ -15,10 +15,15 @@ class SectionHeaderView: UICollectionReusableView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .black
         return label
     }()
 
-    let deleteButton = UIButton()
+    let deleteButton: UIButton = {
+        let button = UIButton()
+        button.contentHorizontalAlignment = .trailing
+        return button
+    }()
 
     weak var delegate: SectionHeaderDelegate?
     private var section: Int?
@@ -48,8 +53,8 @@ class SectionHeaderView: UICollectionReusableView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            deleteButton.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
-            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            deleteButton.widthAnchor.constraint(equalToConstant: 40),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             deleteButton.topAnchor.constraint(equalTo: topAnchor),
             deleteButton.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
