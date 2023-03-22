@@ -53,48 +53,40 @@ class HomeViewModel {
             return header!
         }
 
-        $promotions.combineLatest($categories)
-            .sink { [weak self] promotions, categories in
+        let assets = Publishers.CombineLatest3($novelties, $children, $educational)
+        $promotions.combineLatest($categories, assets)
+            .sink(receiveValue: { result in
                 var snapshot = NSDiffableDataSourceSnapshot<Layout, Item>()
-                snapshot.appendSections([.promotions])
-                snapshot.appendItems(promotions.map { Item.promotion($0) }, toSection: .promotions)
-                snapshot.appendSections([.categories])
-                snapshot.appendItems(categories.map { Item.category($0) }, toSection: .categories)
+                snapshot.appendSections([.promotions, .categories, .novelties, .children, .educational])
+                snapshot.appendItems(result.0.map { Item.promotion($0) }, toSection: .promotions)
+                snapshot.appendItems(result.1.map { Item.category($0) }, toSection: .categories)
+                snapshot.appendItems(result.2.0.map { Item.novelty($0) }, toSection: .novelties)
+                snapshot.appendItems(result.2.1.map { Item.children($0) }, toSection: .children)
+                snapshot.appendItems(result.2.2.map { Item.educational($0) }, toSection: .educational)
                 source.apply(snapshot, animatingDifferences: true)
-            }
+            })
             .store(in: &cancellables)
     }
 
     func fetchData() {
-        promotions = [
-            Promotion(image: "2"),
-            Promotion(image: "1")
-        ]
-        repository.getCategories { response in
-            self.categories = response.categories
+        repository.getPromotions { [weak self] response in
+            self?.promotions = response.promotions
         }
-//        categories = [
-//            Category(name: "Test 1", image: ""),
-//            Category(name: "Test 2", image: ""),
-//            Category(name: "Test 3", image: ""),
-//            Category(name: "Test 4", image: "")
-//        ]
-        novelties = [
-            Asset(name: "Test 1", image: ""),
-            Asset(name: "Test 2", image: ""),
-            Asset(name: "Test 3", image: ""),
-            Asset(name: "Test 4", image: "")
-        ]
-        children = [
-            Asset(name: "Test 1", image: ""),
-            Asset(name: "Test 2", image: ""),
-            Asset(name: "Test 3", image: ""),
-            Asset(name: "Test 4", image: "")
-        ]
-        educational = [
-            Asset(name: "Test 1", image: ""),
-            Asset(name: "Test 2", image: ""),
-            Asset(name: "Test 3", image: "")
-        ]
+        repository.getCategories { [weak self] response in
+            self?.categories = response.categories
+        }
+        repository.getContentGroups { [weak self] response in
+            self?.novelties = response
+                .filter { $0.type.contains(.movie) || $0.type.contains(.series) }
+                .flatMap { $0.assets }
+
+            self?.children = response
+                .filter { $0.type.contains(.liveChannel) }
+                .flatMap { $0.assets }
+
+            self?.educational = response
+                .filter { $0.type.contains(.epg) }
+                .flatMap { $0.assets }
+        }
     }
 }

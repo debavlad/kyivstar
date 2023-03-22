@@ -11,7 +11,9 @@ import RxSwift
 
 protocol GeneratorRepositoryProtocol {
     // TODO: - Replace with `Observable`
+    func getPromotions(completion: @escaping (GetPromotionsResponse) -> Void)
     func getCategories(completion: @escaping (GetCategoriesResponse) -> Void)
+    func getContentGroups(completion: @escaping (GetContentGroupsResponse) -> Void)
 }
 
 class GeneratorRepository: GeneratorRepositoryProtocol {
@@ -25,18 +27,27 @@ class GeneratorRepository: GeneratorRepositoryProtocol {
         provider = MoyaProvider<GeneratorEndpoint>(plugins: [authPlugin])
     }
 
+    func getPromotions(completion: @escaping (GetPromotionsResponse) -> Void) {
+        provider.rx
+            .request(.getPromotions)
+            .map(GetPromotionsResponse.self)
+            .subscribe(onSuccess: completion)
+            .disposed(by: disposeBag)
+    }
+
     func getCategories(completion: @escaping (GetCategoriesResponse) -> Void) {
         provider.rx
             .request(.getCategories)
             .map(GetCategoriesResponse.self)
-            .subscribe { result in
-                switch result {
-                case .success(let response):
-                    completion(response)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
+            .subscribe(onSuccess: completion)
+            .disposed(by: disposeBag)
+    }
+
+    func getContentGroups(completion: @escaping (GetContentGroupsResponse) -> Void) {
+        provider.rx
+            .request(.getContentGroups)
+            .map(GetContentGroupsResponse.self)
+            .subscribe(onSuccess: completion)
             .disposed(by: disposeBag)
     }
 }

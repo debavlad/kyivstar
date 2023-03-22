@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Promotion: Hashable {
+struct Promotion: Codable, Hashable {
     var id: String?
     var name: String?
     var image: String

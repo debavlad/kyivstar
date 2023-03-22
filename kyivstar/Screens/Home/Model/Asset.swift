@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Asset: Hashable {
+struct Asset: Codable, Hashable {
     var id: String?
     var name: String
     var image: String
