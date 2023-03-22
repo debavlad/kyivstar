@@ -14,7 +14,7 @@ protocol SectionHeaderDelegate: AnyObject {
 class SectionHeaderView: UICollectionReusableView {
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 16, weight: .bold)
         label.textColor = .black
         return label
     }()
@@ -22,6 +22,9 @@ class SectionHeaderView: UICollectionReusableView {
     let deleteButton: UIButton = {
         let button = UIButton()
         button.contentHorizontalAlignment = .trailing
+        button.setTitle("Del", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16)
         return button
     }()
 
@@ -41,9 +44,6 @@ class SectionHeaderView: UICollectionReusableView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
-
-        deleteButton.setTitle("Del", for: .normal)
-        deleteButton.setTitleColor(.systemBlue, for: .normal)
 
         addSubview(titleLabel)
         addSubview(deleteButton)

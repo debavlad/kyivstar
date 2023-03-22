@@ -16,6 +16,9 @@
 		D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD26329CB3D6A00B50CFD /* SectionHeaderView.swift */; };
 		D8CFD26829CB441C00B50CFD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD26729CB441C00B50CFD /* Item.swift */; };
 		D8CFD26A29CB44FB00B50CFD /* UICollectionView+ReuseId.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD26929CB44FB00B50CFD /* UICollectionView+ReuseId.swift */; };
+		D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD26C29CB7A7900B50CFD /* CategoryCollectionViewCell.swift */; };
+		D8CFD26F29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD26E29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift */; };
+		D8CFD27129CB7D7800B50CFD /* ChildrenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD27029CB7D7800B50CFD /* ChildrenCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		D8CFD26329CB3D6A00B50CFD /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		D8CFD26729CB441C00B50CFD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D8CFD26929CB44FB00B50CFD /* UICollectionView+ReuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReuseId.swift"; sourceTree = "<group>"; };
+		D8CFD26C29CB7A7900B50CFD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8CFD26E29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoveltyCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8CFD27029CB7D7800B50CFD /* ChildrenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,9 @@
 			children = (
 				D8CFD24129CB21B800B50CFD /* ViewController.swift */,
 				D8CFD25D29CB38EB00B50CFD /* ItemCollectionViewCell.swift */,
+				D8CFD26C29CB7A7900B50CFD /* CategoryCollectionViewCell.swift */,
+				D8CFD26E29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift */,
+				D8CFD27029CB7D7800B50CFD /* ChildrenCollectionViewCell.swift */,
 				D8CFD26329CB3D6A00B50CFD /* SectionHeaderView.swift */,
 			);
 			path = View;
@@ -170,10 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */,
 				D8CFD25E29CB38EB00B50CFD /* ItemCollectionViewCell.swift in Sources */,
 				D8CFD24229CB21B800B50CFD /* ViewController.swift in Sources */,
+				D8CFD26F29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift in Sources */,
 				D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */,
 				D8CFD26829CB441C00B50CFD /* Item.swift in Sources */,
+				D8CFD27129CB7D7800B50CFD /* ChildrenCollectionViewCell.swift in Sources */,
 				D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */,
 				D8CFD26A29CB44FB00B50CFD /* UICollectionView+ReuseId.swift in Sources */,
 				D8CFD24029CB21B800B50CFD /* SceneDelegate.swift in Sources */,
