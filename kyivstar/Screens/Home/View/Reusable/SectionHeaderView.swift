@@ -60,7 +60,7 @@ class SectionHeaderView: UICollectionReusableView {
         ])
     }
 
-    func configure(with title: String, section: Int, delegate: SectionHeaderDelegate) {
+    func configure(with title: String, section: Int, delegate: SectionHeaderDelegate?) {
         titleLabel.text = title
         self.section = section
         self.delegate = delegate

@@ -9,35 +9,7 @@ import UIKit
 import SwiftUI
 
 class HomeViewController: UICollectionViewController {
-    static let categoryHeaderId = "categoryHeaderId"
-    let headerId = "headerId"
-
-    lazy var source: UICollectionViewDiffableDataSource<Layout, Item> = .init(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell in
-        switch item {
-        case .promotion(let promotion):
-            let cell: UICollectionViewCell = collectionView.dequeue(for: indexPath)
-            cell.backgroundColor = .red
-            cell.layer.cornerRadius = 24
-            return cell
-        case .category(let category):
-            let cell: CategoryCollectionViewCell = collectionView.dequeue(for: indexPath)
-            cell.configure(with: category.name)
-            return cell
-        case .novelty(let asset):
-            let cell: NoveltyCollectionViewCell = collectionView.dequeue(for: indexPath)
-            cell.configure(with: asset.name)
-            return cell
-        case .children(let asset):
-            let cell: ChildrenCollectionViewCell = collectionView.dequeue(for: indexPath)
-            //...
-            return cell
-        case .educational(let asset):
-            let cell: UICollectionViewCell = collectionView.dequeue(for: indexPath)
-            cell.backgroundColor = .red
-            cell.layer.cornerRadius = 24
-            return cell
-        }
-    }
+    private let viewModel = HomeViewModel()
 
     init() {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -58,7 +30,7 @@ class HomeViewController: UICollectionViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 8, trailing: 16)
                 section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: Self.categoryHeaderId, alignment: .top)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 ]
                 return section
             case .novelties:
@@ -69,7 +41,7 @@ class HomeViewController: UICollectionViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 8, trailing: 16)
                 section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: Self.categoryHeaderId, alignment: .top)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 ]
                 return section
             case .children:
@@ -80,7 +52,7 @@ class HomeViewController: UICollectionViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 8, trailing: 16)
                 section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: Self.categoryHeaderId, alignment: .top)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 ]
                 return section
             default:
@@ -91,7 +63,7 @@ class HomeViewController: UICollectionViewController {
                 section.orthogonalScrollingBehavior = .continuous
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 8, trailing: 16)
                 section.boundarySupplementaryItems = [
-                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: Self.categoryHeaderId, alignment: .top)
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(40)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 ]
                 return section
             }
@@ -107,16 +79,19 @@ class HomeViewController: UICollectionViewController {
         super.viewDidLoad()
         setupCollectionView()
         setupNavigationBar()
-        setupDataSource()
+        viewModel.fetchData()
     }
 
     private func setupCollectionView() {
         collectionView.backgroundColor = .white
-        collectionView.register(cell: UICollectionViewCell.self)
+        collectionView.register(cell: PromotionCollectionViewCell.self)
         collectionView.register(cell: CategoryCollectionViewCell.self)
         collectionView.register(cell: NoveltyCollectionViewCell.self)
         collectionView.register(cell: ChildrenCollectionViewCell.self)
-        collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: Self.categoryHeaderId, withReuseIdentifier: headerId)
+        collectionView.register(cell: EducationalCollectionViewCell.self)
+        collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.reuseIdentifier)
+
+        viewModel.setupDataSource(for: collectionView)
     }
 
     private func setupNavigationBar() {
@@ -124,47 +99,6 @@ class HomeViewController: UICollectionViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "Logo")
         navigationItem.titleView = imageView
-    }
-
-    private func setupDataSource() {
-        source.supplementaryViewProvider = { collectionView, kind, indexPath in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: Self.categoryHeaderId, withReuseIdentifier: self.headerId, for: indexPath) as? SectionHeaderView
-            if let title = Layout(rawValue: indexPath.section)?.title {
-                header?.configure(with: title, section: indexPath.section, delegate: self)
-            }
-            return header!
-        }
-
-        var snapshot = source.snapshot()
-        snapshot.appendSections([.promotions, .categories, .novelties, .children, .educational])
-        snapshot.appendItems([
-            .promotion(Promotion(image: "2")),
-            .promotion(Promotion(image: "1"))
-        ], toSection: .promotions)
-        snapshot.appendItems([
-            .category(Category(name: "Test 1", image: "")),
-            .category(Category(name: "Test 2", image: "")),
-            .category(Category(name: "Test 3", image: "")),
-            .category(Category(name: "Test 4", image: ""))
-        ], toSection: .categories)
-        snapshot.appendItems([
-            .novelty(Asset(name: "Test 1", image: "")),
-            .novelty(Asset(name: "Test 2", image: "")),
-            .novelty(Asset(name: "Test 3", image: "")),
-            .novelty(Asset(name: "Test 4", image: ""))
-        ], toSection: .novelties)
-        snapshot.appendItems([
-            .children(Asset(name: "Test 1", image: "")),
-            .children(Asset(name: "Test 2", image: "")),
-            .children(Asset(name: "Test 3", image: "")),
-            .children(Asset(name: "Test 4", image: ""))
-        ], toSection: .children)
-        snapshot.appendItems([
-            .educational(Asset(name: "Test 1", image: "")),
-            .educational(Asset(name: "Test 2", image: "")),
-            .educational(Asset(name: "Test 3", image: ""))
-        ], toSection: .educational)
-        source.apply(snapshot)
     }
 }
 

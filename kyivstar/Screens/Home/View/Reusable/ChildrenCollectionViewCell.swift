@@ -30,6 +30,10 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = (frame.width - 8)/2
     }
 
+    func configure(with asset: Asset) {
+        // TODO: - Set `Asset` image
+    }
+
     private func setupSubviews() {
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false

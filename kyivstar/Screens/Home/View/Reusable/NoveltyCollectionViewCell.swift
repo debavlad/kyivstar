@@ -1,5 +1,5 @@
 //
-//  CategoryCollectionViewCell.swift
+//  NoveltyCollectionViewCell.swift
 //  kyivstar
 //
 //  Created by Vladyslav Deba on 22.03.2023.
@@ -7,9 +7,10 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class NoveltyCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let view = UIImageView()
+        view.backgroundColor = .red
         view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 24
         return view
@@ -18,7 +19,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
-        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
 
@@ -31,9 +32,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with category: String) {
-        imageView.backgroundColor = .red
-        titleLabel.text = category
+    func configure(with asset: Asset) {
+        // TODO: - Set `Asset` image
+        titleLabel.text = asset.name
     }
 
     private func setupSubviews() {
@@ -55,3 +56,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         ])
     }
 }
+
