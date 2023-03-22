@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */; };
 		D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */; };
 		D8CFD24029CB21B800B50CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */; };
 		D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD24129CB21B800B50CFD /* HomeViewController.swift */; };
@@ -25,9 +26,17 @@
 		D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28A29CB9D6000B50CFD /* HomeViewModel.swift */; };
 		D8CFD28D29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28C29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift */; };
 		D8CFD28F29CBA45B00B50CFD /* EducationalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28E29CBA45B00B50CFD /* EducationalCollectionViewCell.swift */; };
+		D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */; };
+		D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */; };
+		D8CFD29B29CBAAAE00B50CFD /* GetCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */; };
+		D8CFD29E29CBAD3A00B50CFD /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */; };
+		D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29F29CBAFE100B50CFD /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.debug.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.debug.xcconfig"; sourceTree = "<group>"; };
+		672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.release.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.release.xcconfig"; sourceTree = "<group>"; };
+		CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23A29CB21B700B50CFD /* kyivstar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyivstar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +57,11 @@
 		D8CFD28A29CB9D6000B50CFD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D8CFD28C29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8CFD28E29CBA45B00B50CFD /* EducationalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationalCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorEndpoint.swift; sourceTree = "<group>"; };
+		D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorRepository.swift; sourceTree = "<group>"; };
+		D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesResponse.swift; sourceTree = "<group>"; };
+		D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
+		D8CFD29F29CBAFE100B50CFD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +69,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		769D2571F467704598B95BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		859DFC189DBA7CAA159EEF34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */,
+				672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D8CFD23129CB21B700B50CFD = {
 			isa = PBXGroup;
 			children = (
 				D8CFD23C29CB21B700B50CFD /* kyivstar */,
 				D8CFD23B29CB21B700B50CFD /* Products */,
+				859DFC189DBA7CAA159EEF34 /* Pods */,
+				769D2571F467704598B95BBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +114,11 @@
 		D8CFD23C29CB21B700B50CFD /* kyivstar */ = {
 			isa = PBXGroup;
 			children = (
-				D8CFD27229CB881200B50CFD /* Screens */,
 				D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */,
 				D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */,
+				D8CFD27229CB881200B50CFD /* Screens */,
+				D8CFD29129CBA70200B50CFD /* Networking */,
+				D8CFD29C29CBAD2F00B50CFD /* Features */,
 				D8CFD26B29CB450E00B50CFD /* Extension */,
 				D8CFD24829CB21BB00B50CFD /* LaunchScreen.storyboard */,
 				D8CFD24629CB21BB00B50CFD /* Assets.xcassets */,
@@ -159,6 +195,25 @@
 			path = Reusable;
 			sourceTree = "<group>";
 		};
+		D8CFD29129CBA70200B50CFD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */,
+				D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */,
+				D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D8CFD29C29CBAD2F00B50CFD /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */,
+				D8CFD29F29CBAFE100B50CFD /* Cache.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8CFD24E29CB21BB00B50CFD /* Build configuration list for PBXNativeTarget "kyivstar" */;
 			buildPhases = (
+				4089854267D136932BDBE64A /* [CP] Check Pods Manifest.lock */,
 				D8CFD23629CB21B700B50CFD /* Sources */,
 				D8CFD23729CB21B700B50CFD /* Frameworks */,
 				D8CFD23829CB21B700B50CFD /* Resources */,
+				B540B5BD7ACB8043842DA6B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,19 +281,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4089854267D136932BDBE64A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kyivstar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B540B5BD7ACB8043842DA6B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8CFD23629CB21B700B50CFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */,
+				D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */,
+				D8CFD29E29CBAD3A00B50CFD /* CachedImageView.swift in Sources */,
 				D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */,
 				D8CFD28729CB9AB600B50CFD /* Asset.swift in Sources */,
 				D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */,
+				D8CFD29B29CBAAAE00B50CFD /* GetCategoriesResponse.swift in Sources */,
 				D8CFD26F29CB7C7D00B50CFD /* NoveltyCollectionViewCell.swift in Sources */,
 				D8CFD28129CB8C6400B50CFD /* Item.swift in Sources */,
 				D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */,
 				D8CFD27129CB7D7800B50CFD /* ChildrenCollectionViewCell.swift in Sources */,
 				D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */,
+				D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */,
 				D8CFD27B29CB8A1000B50CFD /* Promotion.swift in Sources */,
 				D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */,
 				D8CFD27D29CB8B8800B50CFD /* Layout.swift in Sources */,
@@ -378,6 +482,7 @@
 		};
 		D8CFD24F29CB21BB00B50CFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +511,7 @@
 		};
 		D8CFD25029CB21BB00B50CFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

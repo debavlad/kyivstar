@@ -15,6 +15,8 @@ class HomeViewModel {
     @Published var children: [Asset] = []
     @Published var educational: [Asset] = []
 
+    private let repository: GeneratorRepositoryProtocol = GeneratorRepository()
+
     private var cancellables: Set<AnyCancellable> = []
 
     func setupDataSource(for collectionView: UICollectionView) {
@@ -68,12 +70,15 @@ class HomeViewModel {
             Promotion(image: "2"),
             Promotion(image: "1")
         ]
-        categories = [
-            Category(name: "Test 1", image: ""),
-            Category(name: "Test 2", image: ""),
-            Category(name: "Test 3", image: ""),
-            Category(name: "Test 4", image: "")
-        ]
+        repository.getCategories { response in
+            self.categories = response.categories
+        }
+//        categories = [
+//            Category(name: "Test 1", image: ""),
+//            Category(name: "Test 2", image: ""),
+//            Category(name: "Test 3", image: ""),
+//            Category(name: "Test 4", image: "")
+//        ]
         novelties = [
             Asset(name: "Test 1", image: ""),
             Asset(name: "Test 2", image: ""),
