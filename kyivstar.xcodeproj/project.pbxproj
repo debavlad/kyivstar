@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */; };
+		D8577B5A29CCCEF300ECFC01 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */; };
+		D8577B6129CCDA0600ECFC01 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6029CCDA0600ECFC01 /* AssetView.swift */; };
 		D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */; };
 		D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD24129CB21B800B50CFD /* HomeViewController.swift */; };
 		D8CFD24729CB21BB00B50CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD24629CB21BB00B50CFD /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.debug.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.debug.xcconfig"; sourceTree = "<group>"; };
 		672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.release.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.release.xcconfig"; sourceTree = "<group>"; };
 		CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		D8577B6029CCDA0600ECFC01 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
 		D8CFD23A29CB21B700B50CFD /* kyivstar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyivstar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CFD24129CB21B800B50CFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D8577B5F29CCD9D600ECFC01 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */,
+				D8577B6029CCDA0600ECFC01 /* AssetView.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 		D8CFD23129CB21B700B50CFD = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				D8CFD27329CB881600B50CFD /* Home */,
+				D8577B5F29CCD9D600ECFC01 /* Asset */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -378,11 +392,13 @@
 				D8CFD28129CB8C6400B50CFD /* Item.swift in Sources */,
 				D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */,
 				D8CFD27129CB7D7800B50CFD /* ChildrenCollectionViewCell.swift in Sources */,
+				D8577B6129CCDA0600ECFC01 /* AssetView.swift in Sources */,
 				D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */,
 				D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */,
 				D8CFD27B29CB8A1000B50CFD /* Promotion.swift in Sources */,
 				D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */,
 				D8CFD27D29CB8B8800B50CFD /* Layout.swift in Sources */,
+				D8577B5A29CCCEF300ECFC01 /* AssetViewController.swift in Sources */,
 				D8CFD26A29CB44FB00B50CFD /* UICollectionView+ReuseId.swift in Sources */,
 				D8CFD28D29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift in Sources */,
 				D8CFD28F29CBA45B00B50CFD /* EducationalCollectionViewCell.swift in Sources */,

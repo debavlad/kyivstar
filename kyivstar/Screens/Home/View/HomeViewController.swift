@@ -17,7 +17,7 @@ class HomeViewController: UICollectionViewController {
             switch layout {
             case .promotions:
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
-                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 24, bottom: 8, trailing: 24)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 8, trailing: 24)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .paging
@@ -105,9 +105,7 @@ class HomeViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let asset = viewModel.asset(for: indexPath) else { return }
-        let vc = UIViewController()
-        vc.title = asset.name
-        vc.view.backgroundColor = .white
+        let vc = AssetViewController(data: asset)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
