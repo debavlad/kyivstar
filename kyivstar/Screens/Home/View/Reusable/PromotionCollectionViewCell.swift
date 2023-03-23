@@ -41,12 +41,8 @@ class PromotionCollectionViewCell: UICollectionViewCell {
 
     private func setupSubviews() {
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

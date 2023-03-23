@@ -32,31 +32,26 @@ class SectionHeaderView: UICollectionReusableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
+        setupSubviews()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupUI() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
-        deleteButton.translatesAutoresizingMaskIntoConstraints = false
-
+    private func setupSubviews() {
         addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.leading.top.bottom.equalToSuperview()
+        }
+
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         addSubview(deleteButton)
-
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            deleteButton.widthAnchor.constraint(equalToConstant: 40),
-            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            deleteButton.topAnchor.constraint(equalTo: topAnchor),
-            deleteButton.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        deleteButton.snp.makeConstraints {
+            $0.width.equalTo(40)
+            $0.trailing.equalToSuperview().inset(8)
+            $0.top.bottom.equalToSuperview()
+        }
     }
 
     func configure(with title: String, section: Int, delegate: SectionHeaderDelegate?) {
