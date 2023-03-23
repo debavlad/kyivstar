@@ -20,7 +20,11 @@ class AssetView: UIView {
         let button = UIButton()
         button.setTitle("Play", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        button.imageView?.tintColor = .white
         button.backgroundColor = .systemBlue
+        button.titleEdgeInsets.left = 16
+        button.imageEdgeInsets.right = 16
         button.layer.cornerRadius = 20
         return button
     }()
@@ -28,6 +32,8 @@ class AssetView: UIView {
     private let favoriteButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemGray5
+        button.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        button.imageView?.tintColor = .darkGray
         button.layer.cornerRadius = 20
         return button
     }()
