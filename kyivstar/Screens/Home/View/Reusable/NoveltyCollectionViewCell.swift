@@ -19,7 +19,7 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
-        label.numberOfLines = 2
+        label.numberOfLines = 1
         return label
     }()
 

@@ -68,6 +68,19 @@ class HomeViewModel {
             .store(in: &cancellables)
     }
 
+    func asset(for indexPath: IndexPath) -> Asset? {
+        switch Layout(rawValue: indexPath.section) {
+        case .novelties:
+            return novelties[indexPath.item]
+        case .children:
+            return children[indexPath.item]
+        case .educational:
+            return educational[indexPath.item]
+        default:
+            return nil
+        }
+    }
+
     func fetchData() {
         repository.getPromotions { [weak self] response in
             self?.promotions = response.promotions

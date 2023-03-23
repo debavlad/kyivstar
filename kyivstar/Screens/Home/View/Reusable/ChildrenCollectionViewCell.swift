@@ -27,7 +27,7 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = (frame.width - 8)/2
+        layer.cornerRadius = frame.width/2
     }
 
     func configure(with asset: Asset) {

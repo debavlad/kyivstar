@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */; };
 		D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */; };
-		D8CFD24029CB21B800B50CFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */; };
 		D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD24129CB21B800B50CFD /* HomeViewController.swift */; };
 		D8CFD24729CB21BB00B50CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD24629CB21BB00B50CFD /* Assets.xcassets */; };
 		D8CFD24A29CB21BB00B50CFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD24829CB21BB00B50CFD /* LaunchScreen.storyboard */; };
@@ -33,6 +32,7 @@
 		D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29F29CBAFE100B50CFD /* Cache.swift */; };
 		D8CFD2A229CBB21C00B50CFD /* GetPromotionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */; };
 		D8CFD2A429CBB2C400B50CFD /* GetContentGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */; };
+		D8CFD2B929CCC2ED00B50CFD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2B829CCC2ED00B50CFD /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +41,9 @@
 		CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23A29CB21B700B50CFD /* kyivstar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyivstar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8CFD24129CB21B800B50CFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8CFD24629CB21BB00B50CFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CFD24929CB21BB00B50CFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D8CFD24B29CB21BB00B50CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8CFD26329CB3D6A00B50CFD /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		D8CFD26929CB44FB00B50CFD /* UICollectionView+ReuseId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReuseId.swift"; sourceTree = "<group>"; };
 		D8CFD26C29CB7A7900B50CFD /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -66,6 +64,7 @@
 		D8CFD29F29CBAFE100B50CFD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPromotionsResponse.swift; sourceTree = "<group>"; };
 		D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContentGroupsResponse.swift; sourceTree = "<group>"; };
+		D8CFD2B829CCC2ED00B50CFD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,14 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */,
-				D8CFD23F29CB21B800B50CFD /* SceneDelegate.swift */,
 				D8CFD27229CB881200B50CFD /* Screens */,
 				D8CFD29129CBA70200B50CFD /* Networking */,
 				D8CFD29C29CBAD2F00B50CFD /* Features */,
 				D8CFD26B29CB450E00B50CFD /* Extension */,
 				D8CFD24829CB21BB00B50CFD /* LaunchScreen.storyboard */,
 				D8CFD24629CB21BB00B50CFD /* Assets.xcassets */,
-				D8CFD24B29CB21BB00B50CFD /* Info.plist */,
 			);
 			path = kyivstar;
 			sourceTree = "<group>";
@@ -150,6 +147,7 @@
 		D8CFD27329CB881600B50CFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D8CFD2B729CCC2DB00B50CFD /* Coordinator */,
 				D8CFD27429CB882300B50CFD /* Model */,
 				D8CFD27529CB882700B50CFD /* View */,
 				D8CFD27629CB882A00B50CFD /* ViewModel */,
@@ -242,6 +240,14 @@
 				D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D8CFD2B729CCC2DB00B50CFD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFD2B829CCC2ED00B50CFD /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +369,7 @@
 				D8CFD29E29CBAD3A00B50CFD /* CachedImageView.swift in Sources */,
 				D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */,
 				D8CFD28729CB9AB600B50CFD /* Asset.swift in Sources */,
+				D8CFD2B929CCC2ED00B50CFD /* HomeCoordinator.swift in Sources */,
 				D8CFD2A229CBB21C00B50CFD /* GetPromotionsResponse.swift in Sources */,
 				D8CFD2A429CBB2C400B50CFD /* GetContentGroupsResponse.swift in Sources */,
 				D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */,
@@ -377,7 +384,6 @@
 				D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */,
 				D8CFD27D29CB8B8800B50CFD /* Layout.swift in Sources */,
 				D8CFD26A29CB44FB00B50CFD /* UICollectionView+ReuseId.swift in Sources */,
-				D8CFD24029CB21B800B50CFD /* SceneDelegate.swift in Sources */,
 				D8CFD28D29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift in Sources */,
 				D8CFD28F29CBA45B00B50CFD /* EducationalCollectionViewCell.swift in Sources */,
 				D8CFD28929CB9AC300B50CFD /* Category.swift in Sources */,
@@ -522,7 +528,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4N5Z8SSZ59;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = kyivstar/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -551,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4N5Z8SSZ59;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = kyivstar/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

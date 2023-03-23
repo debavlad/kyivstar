@@ -83,7 +83,9 @@ class HomeViewController: UICollectionViewController {
     }
 
     private func setupCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.delegate = self
+
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(cell: PromotionCollectionViewCell.self)
         collectionView.register(cell: CategoryCollectionViewCell.self)
         collectionView.register(cell: NoveltyCollectionViewCell.self)
@@ -100,34 +102,18 @@ class HomeViewController: UICollectionViewController {
         imageView.image = UIImage(named: "Logo")
         navigationItem.titleView = imageView
     }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let asset = viewModel.asset(for: indexPath) else { return }
+        let vc = UIViewController()
+        vc.title = asset.name
+        vc.view.backgroundColor = .white
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: SectionHeaderDelegate {
     func deleteButtonTapped(in section: Int) {
         //...
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
-    }
-
-    struct Container: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            UINavigationController(rootViewController: HomeViewController())
-        }
-
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            //...
-        }
-
-        typealias UIViewControllerType = UIViewController
-    }
-}
-
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
     }
 }
