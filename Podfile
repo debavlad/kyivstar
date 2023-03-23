@@ -8,4 +8,5 @@ target 'kyivstar' do
   pod 'Moya', '~> 15.0'
   pod 'Moya/RxSwift'
   pod 'SnapKit', '~> 5.6.0'
+  pod 'Kingfisher', '~> 7.0'
 end

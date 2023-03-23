@@ -11,8 +11,9 @@ class EducationalCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.backgroundColor = .red
+        view.backgroundColor = .systemGray5
         view.layer.cornerRadius = 24
+        view.layer.masksToBounds = true
         return view
     }()
 
@@ -27,7 +28,14 @@ class EducationalCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with item: Item) {
-        // TODO: - Set `Asset` image
+        guard let image = item.image,
+              let url = URL(string: image) else { return }
+
+        imageView.kf.setImage(
+            with: url,
+            options: [
+                .transition(.fade(0.25))
+            ])
     }
 
     private func setupSubviews() {

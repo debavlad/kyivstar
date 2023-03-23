@@ -34,8 +34,6 @@
 		D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */; };
 		D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */; };
 		D8CFD29B29CBAAAE00B50CFD /* GetCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */; };
-		D8CFD29E29CBAD3A00B50CFD /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */; };
-		D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29F29CBAFE100B50CFD /* Cache.swift */; };
 		D8CFD2A229CBB21C00B50CFD /* GetPromotionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */; };
 		D8CFD2A429CBB2C400B50CFD /* GetContentGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */; };
 		D8CFD2B929CCC2ED00B50CFD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2B829CCC2ED00B50CFD /* HomeCoordinator.swift */; };
@@ -72,8 +70,6 @@
 		D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorEndpoint.swift; sourceTree = "<group>"; };
 		D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorRepository.swift; sourceTree = "<group>"; };
 		D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesResponse.swift; sourceTree = "<group>"; };
-		D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
-		D8CFD29F29CBAFE100B50CFD /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPromotionsResponse.swift; sourceTree = "<group>"; };
 		D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContentGroupsResponse.swift; sourceTree = "<group>"; };
 		D8CFD2B829CCC2ED00B50CFD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -149,7 +145,6 @@
 				D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */,
 				D8CFD27229CB881200B50CFD /* Screens */,
 				D8CFD29129CBA70200B50CFD /* Networking */,
-				D8CFD29C29CBAD2F00B50CFD /* Features */,
 				D8CFD26B29CB450E00B50CFD /* Extension */,
 				D8CFD24829CB21BB00B50CFD /* LaunchScreen.storyboard */,
 				D8CFD24629CB21BB00B50CFD /* Assets.xcassets */,
@@ -239,15 +234,6 @@
 				D8577B6529CCF4F000ECFC01 /* Services */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		D8CFD29C29CBAD2F00B50CFD /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				D8CFD29D29CBAD3A00B50CFD /* CachedImageView.swift */,
-				D8CFD29F29CBAFE100B50CFD /* Cache.swift */,
-			);
-			path = Features;
 			sourceTree = "<group>";
 		};
 		D8CFD2A529CBB4D400B50CFD /* Endpoints */ = {
@@ -402,7 +388,6 @@
 				D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */,
 				D8577B6729CCF4FC00ECFC01 /* GeneratorService.swift in Sources */,
 				D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */,
-				D8CFD29E29CBAD3A00B50CFD /* CachedImageView.swift in Sources */,
 				D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */,
 				D8CFD28729CB9AB600B50CFD /* Asset.swift in Sources */,
 				D8CFD2B929CCC2ED00B50CFD /* HomeCoordinator.swift in Sources */,
@@ -418,7 +403,6 @@
 				D8577B6D29CD06D200ECFC01 /* Section.swift in Sources */,
 				D8577B6F29CD06DC00ECFC01 /* Snapshot.swift in Sources */,
 				D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */,
-				D8CFD2A029CBAFE100B50CFD /* Cache.swift in Sources */,
 				D8CFD27B29CB8A1000B50CFD /* Promotion.swift in Sources */,
 				D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */,
 				D8CFD27D29CB8B8800B50CFD /* Layout.swift in Sources */,
