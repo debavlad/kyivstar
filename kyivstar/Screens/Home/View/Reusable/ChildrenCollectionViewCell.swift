@@ -16,9 +16,15 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
+    private let lockImageView: UIImageView = {
+        let image = UIImage(named: "Lock")
+        let view = UIImageView(image: image)
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.masksToBounds = true
         setupSubviews()
     }
 
@@ -28,10 +34,12 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = frame.width/2
+        imageView.layer.cornerRadius = frame.width/2
     }
 
     func configure(with item: Item) {
+        lockImageView.isHidden = item.purchased ?? false
+        
         guard let image = item.image,
               let url = URL(string: image) else { return }
 
@@ -44,13 +52,15 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
 
     private func setupSubviews() {
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        imageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        addSubview(lockImageView)
+        lockImageView.snp.makeConstraints {
+            $0.size.equalTo(32)
+            $0.leading.top.equalToSuperview()
+        }
     }
 }
 

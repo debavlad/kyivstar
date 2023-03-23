@@ -17,6 +17,13 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
+    private let lockImageView: UIImageView = {
+        let image = UIImage(named: "Lock")
+        let view = UIImageView(image: image)
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
@@ -35,6 +42,7 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
 
     func configure(with item: Item) {
         titleLabel.text = item.title
+        lockImageView.isHidden = item.purchased ?? false
 
         guard let image = item.image,
               let url = URL(string: image) else { return }
@@ -63,6 +71,12 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -8)
         ])
+
+        addSubview(lockImageView)
+        lockImageView.snp.makeConstraints {
+            $0.size.equalTo(24)
+            $0.leading.top.equalToSuperview().inset(8)
+        }
     }
 }
 
