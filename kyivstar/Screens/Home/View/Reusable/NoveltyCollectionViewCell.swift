@@ -56,21 +56,15 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
 
     private func setupSubviews() {
         addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+        titleLabel.snp.makeConstraints {
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
 
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -8)
-        ])
+        imageView.snp.makeConstraints {
+            $0.leading.top.trailing.equalToSuperview()
+            $0.bottom.equalTo(titleLabel.snp.top).offset(-8)
+        }
 
         addSubview(lockImageView)
         lockImageView.snp.makeConstraints {

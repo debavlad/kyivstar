@@ -144,7 +144,7 @@ class HomeView: UIView {
 
     private func createEPGLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                              heightDimension: .absolute(120))
+                                              heightDimension: .absolute(160))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets.trailing = 8
 

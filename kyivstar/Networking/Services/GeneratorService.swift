@@ -89,7 +89,7 @@ class GeneratorService: GeneratorServiceProtocol {
                 let snapshot = Snapshot(
                     section: section,
                     items: group.assets.map {
-                        Item(title: $0.name, image: $0.image, purchased: $0.purchased)
+                        Item(title: $0.name, image: $0.image, purchased: $0.purchased, description: $0.company)
                     })
                 snapshots.append(snapshot)
             }
