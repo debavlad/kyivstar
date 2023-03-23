@@ -10,7 +10,9 @@ import UIKit
 class AssetView: UIView {
     private let imageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .red
+        view.backgroundColor = .systemGray5
+        view.contentMode = .scaleAspectFill
+        view.layer.masksToBounds = true
         return view
     }()
 
@@ -53,8 +55,17 @@ class AssetView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with asset: Asset) {
-        titleLabel.text = asset.name
+    func configure(with item: Item) {
+        titleLabel.text = item.title
+
+        guard let image = item.image,
+              let url = URL(string: image) else { return }
+
+        imageView.kf.setImage(
+            with: url,
+            options: [
+                .transition(.fade(0.25))
+            ])
     }
 
     private func setupSubviews() {

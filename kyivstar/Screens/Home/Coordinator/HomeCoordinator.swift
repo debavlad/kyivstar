@@ -23,8 +23,14 @@ class HomeCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = HomeViewController()
-        // TODO: - Inject `HomeViewModel`
+        let viewModel = HomeViewModel(coordinator: self)
+        let vc = HomeViewController(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: false)
+    }
+
+    func goToAsset(_ item: Item) {
+        let viewModel = AssetViewModel(item)
+        let vc = AssetViewController(viewModel: viewModel)
+        navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 
 class AssetViewController: UIViewController {
-    private var data: Asset
+    private var viewModel: AssetViewModel
     private let contentView = AssetView()
 
-    init(data: Asset) {
-        self.data = data
+    init(viewModel: AssetViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,7 +28,7 @@ class AssetViewController: UIViewController {
     }
 
     private func setupSubviews() {
-        contentView.configure(with: data)
+        contentView.configure(with: viewModel.item)
         view.addSubview(contentView)
         contentView.snp.makeConstraints {
             $0.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)

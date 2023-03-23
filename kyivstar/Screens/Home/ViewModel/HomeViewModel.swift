@@ -12,13 +12,18 @@ protocol LayoutProviding {
     func layout(for sectionIndex: Int) -> Layout
 }
 
-class HomeViewModel {
+class HomeViewModel: NSObject {
+    private weak var coordinator: HomeCoordinator?
+
     @Published var snapshots: [Snapshot] = []
     private(set) var sections: [Section] = []
 
     private let service: GeneratorServiceProtocol = GeneratorService()
-
     private var cancellables: Set<AnyCancellable> = []
+
+    init(coordinator: HomeCoordinator) {
+        self.coordinator = coordinator
+    }
 
     func setupDataSource(for collectionView: UICollectionView) {
         let source: UICollectionViewDiffableDataSource<Section, Item> = .init(
@@ -48,7 +53,9 @@ class HomeViewModel {
         }
 
         source.supplementaryViewProvider = { collectionView, kind, indexPath in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.reuseIdentifier, for: indexPath) as? SectionHeaderView
+            let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionHeader,
+                withReuseIdentifier: SectionHeaderView.reuseIdentifier, for: indexPath) as? SectionHeaderView
             let title = self.sections[indexPath.section].title
             header?.configure(with: title, section: indexPath.section, delegate: nil)
             return header!
@@ -96,6 +103,13 @@ class HomeViewModel {
         group.notify(queue: .main) {
             print("Done!")
         }
+    }
+}
+
+extension HomeViewModel: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = snapshots[indexPath.section].items[indexPath.item]
+        coordinator?.goToAsset(item)
     }
 }
 
