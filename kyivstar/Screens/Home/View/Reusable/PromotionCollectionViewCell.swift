@@ -26,7 +26,7 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with promotion: Promotion) {
+    func configure(with item: Item) {
         // TODO: - Set `Promotion` image
     }
 

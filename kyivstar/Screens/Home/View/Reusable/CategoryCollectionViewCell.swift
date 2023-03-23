@@ -32,9 +32,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with category: Category) {
+    func configure(with item: Item) {
         // TODO: - Set `Category` image
-        titleLabel.text = category.name
+        titleLabel.text = item.title
     }
 
     private func setupSubviews() {

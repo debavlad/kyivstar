@@ -10,7 +10,7 @@ import Foundation
 struct Asset: Codable, Hashable {
     var id: String?
     var name: String
-    var image: String
+    var image: String?
     var company: String?
     var progress: Int?
     var purchased: Bool?

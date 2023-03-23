@@ -26,7 +26,7 @@ class EducationalCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with asset: Asset) {
+    func configure(with item: Item) {
         // TODO: - Set `Asset` image
     }
 

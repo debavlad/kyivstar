@@ -32,9 +32,9 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with asset: Asset) {
+    func configure(with item: Item) {
         // TODO: - Set `Asset` image
-        titleLabel.text = asset.name
+        titleLabel.text = item.title
     }
 
     private func setupSubviews() {

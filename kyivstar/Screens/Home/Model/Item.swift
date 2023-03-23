@@ -7,15 +7,8 @@
 
 import Foundation
 
-enum Item: Hashable {
-    case promotion(Promotion)
-    case category(Category)
-    case novelty(Asset)
-    case children(Asset)
-    case educational(Asset)
+struct Item: Hashable {
+    let title: String
+    let image: String?
 }
 
-struct Section: Hashable {
-    let items: [Item]
-    let title: String?
-}

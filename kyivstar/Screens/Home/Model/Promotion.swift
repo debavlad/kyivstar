@@ -9,7 +9,7 @@ import Foundation
 
 struct Promotion: Codable, Hashable {
     var id: String?
-    var name: String?
+    var name: String
     var image: String
     var company: String?
     var updatedAt: String?

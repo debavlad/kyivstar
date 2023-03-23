@@ -30,7 +30,7 @@ class ChildrenCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = frame.width/2
     }
 
-    func configure(with asset: Asset) {
+    func configure(with item: Item) {
         // TODO: - Set `Asset` image
     }
 
