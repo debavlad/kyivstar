@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */; };
+		BE262FB8DE31ACFB3EB8E8B8 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6B8091428458EF244A1895 /* Pods_kyivstar.framework */; };
 		D8577B5A29CCCEF300ECFC01 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */; };
 		D8577B6129CCDA0600ECFC01 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6029CCDA0600ECFC01 /* AssetView.swift */; };
 		D8577B6729CCF4FC00ECFC01 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6629CCF4FC00ECFC01 /* AssetService.swift */; };
@@ -43,9 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.debug.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.debug.xcconfig"; sourceTree = "<group>"; };
-		672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.release.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.release.xcconfig"; sourceTree = "<group>"; };
-		CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03E323BBF38B1BB2F1AB420D /* Pods-kyivstar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.debug.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.debug.xcconfig"; sourceTree = "<group>"; };
+		0D6B8091428458EF244A1895 /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5574BF0FAF1436115D19771 /* Pods-kyivstar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyivstar.release.xcconfig"; path = "Target Support Files/Pods-kyivstar/Pods-kyivstar.release.xcconfig"; sourceTree = "<group>"; };
 		D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		D8577B6029CCDA0600ECFC01 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
 		D8577B6629CCF4FC00ECFC01 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
@@ -86,28 +86,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */,
+				BE262FB8DE31ACFB3EB8E8B8 /* Pods_kyivstar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		769D2571F467704598B95BBC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		859DFC189DBA7CAA159EEF34 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */,
-				672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */,
+				03E323BBF38B1BB2F1AB420D /* Pods-kyivstar.debug.xcconfig */,
+				C5574BF0FAF1436115D19771 /* Pods-kyivstar.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		88EA1BDE42957D13B1A58FE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D6B8091428458EF244A1895 /* Pods_kyivstar.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D8577B5F29CCD9D600ECFC01 /* Asset */ = {
@@ -134,7 +134,7 @@
 				D8CFD23C29CB21B700B50CFD /* kyivstar */,
 				D8CFD23B29CB21B700B50CFD /* Products */,
 				859DFC189DBA7CAA159EEF34 /* Pods */,
-				769D2571F467704598B95BBC /* Frameworks */,
+				88EA1BDE42957D13B1A58FE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -286,11 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8CFD24E29CB21BB00B50CFD /* Build configuration list for PBXNativeTarget "kyivstar" */;
 			buildPhases = (
-				4089854267D136932BDBE64A /* [CP] Check Pods Manifest.lock */,
+				D0F8C95E7FDC5E4009F407F4 /* [CP] Check Pods Manifest.lock */,
 				D8CFD23629CB21B700B50CFD /* Sources */,
 				D8CFD23729CB21B700B50CFD /* Frameworks */,
 				D8CFD23829CB21B700B50CFD /* Resources */,
-				B540B5BD7ACB8043842DA6B0 /* [CP] Embed Pods Frameworks */,
+				980C3944F1DF539ACB5FCB66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,7 +347,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4089854267D136932BDBE64A /* [CP] Check Pods Manifest.lock */ = {
+		980C3944F1DF539ACB5FCB66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0F8C95E7FDC5E4009F407F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,23 +384,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B540B5BD7ACB8043842DA6B0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kyivstar/Pods-kyivstar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -556,7 +556,7 @@
 		};
 		D8CFD24F29CB21BB00B50CFD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F95DF8056D51543401FA058 /* Pods-kyivstar.debug.xcconfig */;
+			baseConfigurationReference = 03E323BBF38B1BB2F1AB420D /* Pods-kyivstar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -585,7 +585,7 @@
 		};
 		D8CFD25029CB21BB00B50CFD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 672DBF4E922080DB492D58A2 /* Pods-kyivstar.release.xcconfig */;
+			baseConfigurationReference = C5574BF0FAF1436115D19771 /* Pods-kyivstar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

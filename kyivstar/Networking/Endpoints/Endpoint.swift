@@ -5,7 +5,7 @@
 //  Created by Vladyslav Deba on 22.03.2023.
 //
 
-import Moya
+import Alamofire
 
 enum Endpoint {
     case getPromotions
@@ -14,7 +14,7 @@ enum Endpoint {
     case getAssetDetails
 }
 
-extension Endpoint: TargetType, AccessTokenAuthorizable {
+extension Endpoint {
     var url: URL {
         baseURL.appendingPathComponent(path)
     }
@@ -36,19 +36,7 @@ extension Endpoint: TargetType, AccessTokenAuthorizable {
         URL(string: "https://api.json-generator.com/templates")!
     }
 
-    var method: Moya.Method {
+    var method: HTTPMethod {
         .get
-    }
-
-    var task: Moya.Task {
-        .requestPlain
-    }
-
-    var headers: [String : String]? {
-        nil
-    }
-
-    var authorizationType: AuthorizationType? {
-        .bearer
     }
 }
