@@ -18,7 +18,7 @@ class HomeViewModel: NSObject {
     @Published var snapshots: [Snapshot] = []
     private(set) var sections: [Section] = []
 
-    private let service: GeneratorServiceProtocol = GeneratorService()
+    private let service: AssetServiceProtocol = AssetService()
     private var cancellables: Set<AnyCancellable> = []
 
     init(coordinator: HomeCoordinator) {
@@ -91,24 +91,23 @@ class HomeViewModel: NSObject {
     }
 
     func fetchData() {
-        let group = DispatchGroup()
+        Task {
+            try await withThrowingTaskGroup(of: [Snapshot].self) {
+                var snapshots: [Snapshot] = []
 
-        group.enter()
-        service.getContentGroups { [weak self] in
-            self?.snapshots.append(contentsOf: $0)
-            group.leave()
-        }
+                $0.addTask { try await [self.service.getPromotions()] }
+                $0.addTask { try await [self.service.getCategories()] }
+                $0.addTask { try await self.service.getContentGroups() }
 
-        group.enter()
-        service.getCategories { [weak self] in
-            self?.snapshots.append($0)
-            group.leave()
-        }
+                for try await snapshot in $0 {
+                    snapshots.append(contentsOf: snapshot)
+                }
 
-        group.enter()
-        service.getPromotions { [weak self] in
-            self?.snapshots.append($0)
-            group.leave()
+                self.snapshots = snapshots.sorted {
+                    $0.section.layout.rawValue < $1.section.layout.rawValue
+                }
+                return snapshots
+            }
         }
     }
 }

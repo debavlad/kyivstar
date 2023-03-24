@@ -10,12 +10,13 @@
 		3D7347380C20716A478AD416 /* Pods_kyivstar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */; };
 		D8577B5A29CCCEF300ECFC01 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */; };
 		D8577B6129CCDA0600ECFC01 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6029CCDA0600ECFC01 /* AssetView.swift */; };
-		D8577B6729CCF4FC00ECFC01 /* GeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6629CCF4FC00ECFC01 /* GeneratorService.swift */; };
+		D8577B6729CCF4FC00ECFC01 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6629CCF4FC00ECFC01 /* AssetService.swift */; };
 		D8577B6B29CD00C200ECFC01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6A29CD00C200ECFC01 /* HomeView.swift */; };
 		D8577B6D29CD06D200ECFC01 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6C29CD06D200ECFC01 /* Section.swift */; };
 		D8577B6F29CD06DC00ECFC01 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B6E29CD06DC00ECFC01 /* Snapshot.swift */; };
 		D8577B7129CD117B00ECFC01 /* AssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B7029CD117B00ECFC01 /* AssetViewModel.swift */; };
 		D8577B7329CD221200ECFC01 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B7229CD221200ECFC01 /* UIColor+Extension.swift */; };
+		D8577B7529CD2F8C00ECFC01 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8577B7429CD2F8C00ECFC01 /* BaseRepository.swift */; };
 		D8CFD23E29CB21B800B50CFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */; };
 		D8CFD24229CB21B800B50CFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD24129CB21B800B50CFD /* HomeViewController.swift */; };
 		D8CFD24729CB21BB00B50CFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CFD24629CB21BB00B50CFD /* Assets.xcassets */; };
@@ -33,8 +34,8 @@
 		D8CFD28B29CB9D6000B50CFD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28A29CB9D6000B50CFD /* HomeViewModel.swift */; };
 		D8CFD28D29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28C29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift */; };
 		D8CFD28F29CBA45B00B50CFD /* EPGCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD28E29CBA45B00B50CFD /* EPGCollectionViewCell.swift */; };
-		D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */; };
-		D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */; };
+		D8CFD29729CBA84700B50CFD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29629CBA84700B50CFD /* Endpoint.swift */; };
+		D8CFD29929CBAA1A00B50CFD /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29829CBAA1A00B50CFD /* AssetRepository.swift */; };
 		D8CFD29B29CBAAAE00B50CFD /* GetCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */; };
 		D8CFD2A229CBB21C00B50CFD /* GetPromotionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */; };
 		D8CFD2A429CBB2C400B50CFD /* GetContentGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */; };
@@ -47,12 +48,13 @@
 		CE43D7DFFC4B2CD6225FDD4F /* Pods_kyivstar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kyivstar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8577B5929CCCEF300ECFC01 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		D8577B6029CCDA0600ECFC01 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
-		D8577B6629CCF4FC00ECFC01 /* GeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorService.swift; sourceTree = "<group>"; };
+		D8577B6629CCF4FC00ECFC01 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		D8577B6A29CD00C200ECFC01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D8577B6C29CD06D200ECFC01 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		D8577B6E29CD06DC00ECFC01 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		D8577B7029CD117B00ECFC01 /* AssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewModel.swift; sourceTree = "<group>"; };
 		D8577B7229CD221200ECFC01 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		D8577B7429CD2F8C00ECFC01 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		D8CFD23A29CB21B700B50CFD /* kyivstar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyivstar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CFD23D29CB21B800B50CFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CFD24129CB21B800B50CFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +73,8 @@
 		D8CFD28A29CB9D6000B50CFD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D8CFD28C29CBA3FD00B50CFD /* PromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8CFD28E29CBA45B00B50CFD /* EPGCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPGCollectionViewCell.swift; sourceTree = "<group>"; };
-		D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorEndpoint.swift; sourceTree = "<group>"; };
-		D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorRepository.swift; sourceTree = "<group>"; };
+		D8CFD29629CBA84700B50CFD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		D8CFD29829CBAA1A00B50CFD /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		D8CFD29A29CBAAAE00B50CFD /* GetCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesResponse.swift; sourceTree = "<group>"; };
 		D8CFD2A129CBB21C00B50CFD /* GetPromotionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPromotionsResponse.swift; sourceTree = "<group>"; };
 		D8CFD2A329CBB2C400B50CFD /* GetContentGroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContentGroupsResponse.swift; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 		D8577B6529CCF4F000ECFC01 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D8577B6629CCF4FC00ECFC01 /* GeneratorService.swift */,
+				D8577B6629CCF4FC00ECFC01 /* AssetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,7 +247,7 @@
 		D8CFD2A529CBB4D400B50CFD /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				D8CFD29629CBA84700B50CFD /* GeneratorEndpoint.swift */,
+				D8CFD29629CBA84700B50CFD /* Endpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -263,7 +265,8 @@
 		D8CFD2A729CBB4E600B50CFD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				D8CFD29829CBAA1A00B50CFD /* GeneratorRepository.swift */,
+				D8CFD29829CBAA1A00B50CFD /* AssetRepository.swift */,
+				D8577B7429CD2F8C00ECFC01 /* BaseRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -391,9 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8577B6B29CD00C200ECFC01 /* HomeView.swift in Sources */,
-				D8CFD29729CBA84700B50CFD /* GeneratorEndpoint.swift in Sources */,
-				D8577B6729CCF4FC00ECFC01 /* GeneratorService.swift in Sources */,
-				D8CFD29929CBAA1A00B50CFD /* GeneratorRepository.swift in Sources */,
+				D8CFD29729CBA84700B50CFD /* Endpoint.swift in Sources */,
+				D8577B6729CCF4FC00ECFC01 /* AssetService.swift in Sources */,
+				D8CFD29929CBAA1A00B50CFD /* AssetRepository.swift in Sources */,
 				D8CFD26D29CB7A7900B50CFD /* CategoryCollectionViewCell.swift in Sources */,
 				D8CFD28729CB9AB600B50CFD /* Asset.swift in Sources */,
 				D8CFD2B929CCC2ED00B50CFD /* HomeCoordinator.swift in Sources */,
@@ -408,6 +411,7 @@
 				D8577B6129CCDA0600ECFC01 /* AssetView.swift in Sources */,
 				D8577B6D29CD06D200ECFC01 /* Section.swift in Sources */,
 				D8577B6F29CD06DC00ECFC01 /* Snapshot.swift in Sources */,
+				D8577B7529CD2F8C00ECFC01 /* BaseRepository.swift in Sources */,
 				D8CFD26429CB3D6A00B50CFD /* SectionHeaderView.swift in Sources */,
 				D8577B7329CD221200ECFC01 /* UIColor+Extension.swift in Sources */,
 				D8CFD27B29CB8A1000B50CFD /* Promotion.swift in Sources */,
