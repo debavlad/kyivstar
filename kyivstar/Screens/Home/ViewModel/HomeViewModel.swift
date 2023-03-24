@@ -38,15 +38,15 @@ class HomeViewModel: NSObject {
                     cell.configure(with: item)
                     return cell
                 case .movieSeries:
-                    let cell: NoveltyCollectionViewCell = collectionView.dequeue(for: indexPath)
+                    let cell: MovieCollectionViewCell = collectionView.dequeue(for: indexPath)
                     cell.configure(with: item)
                     return cell
                 case .liveChannel:
-                    let cell: ChildrenCollectionViewCell = collectionView.dequeue(for: indexPath)
+                    let cell: ChannelCollectionViewCell = collectionView.dequeue(for: indexPath)
                     cell.configure(with: item)
                     return cell
                 case .epg:
-                    let cell: EducationalCollectionViewCell = collectionView.dequeue(for: indexPath)
+                    let cell: EPGCollectionViewCell = collectionView.dequeue(for: indexPath)
                     cell.configure(with: item)
                     return cell
                 }

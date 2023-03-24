@@ -12,6 +12,9 @@ protocol SectionHeaderDelegate: AnyObject {
 }
 
 class SectionHeaderView: UICollectionReusableView {
+    weak var delegate: SectionHeaderDelegate?
+    private var section: Int?
+
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .bold)
@@ -27,9 +30,6 @@ class SectionHeaderView: UICollectionReusableView {
         return button
     }()
 
-    weak var delegate: SectionHeaderDelegate?
-    private var section: Int?
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
@@ -37,6 +37,12 @@ class SectionHeaderView: UICollectionReusableView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure(with title: String, section: Int, delegate: SectionHeaderDelegate?) {
+        titleLabel.text = title
+        self.section = section
+        self.delegate = delegate
     }
 
     private func setupSubviews() {
@@ -52,12 +58,6 @@ class SectionHeaderView: UICollectionReusableView {
             $0.trailing.equalToSuperview().inset(8)
             $0.top.bottom.equalToSuperview()
         }
-    }
-
-    func configure(with title: String, section: Int, delegate: SectionHeaderDelegate?) {
-        titleLabel.text = title
-        self.section = section
-        self.delegate = delegate
     }
 
     @objc private func deleteButtonTapped() {

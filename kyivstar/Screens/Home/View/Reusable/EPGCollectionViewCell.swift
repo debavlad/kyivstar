@@ -1,5 +1,5 @@
 //
-//  NoveltyCollectionViewCell.swift
+//  EPGCollectionViewCell.swift
 //  kyivstar
 //
 //  Created by Vladyslav Deba on 22.03.2023.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class NoveltyCollectionViewCell: UICollectionViewCell {
+class EPGCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .systemGray5
         view.contentMode = .scaleAspectFill
+        view.backgroundColor = .systemGray5
         view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
         return view
@@ -24,14 +24,6 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         return view
     }()
 
-    private let progressView: UIProgressView = {
-        let view = UIProgressView()
-        view.progressTintColor = .dodgerBlue
-        view.backgroundColor = .gunmetal
-        view.isHidden = true
-        return view
-    }()
-
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
@@ -39,8 +31,17 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    private let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 11)
+        label.textColor = .systemGray
+        label.numberOfLines = 1
+        return label
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layer.masksToBounds = true
         setupSubviews()
     }
 
@@ -50,13 +51,9 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
 
     func configure(with item: Item) {
         titleLabel.text = item.title
+        subtitleLabel.text = item.description
         lockImageView.isHidden = item.purchased ?? false
         
-        if let progress = item.progress, progress > 0 {
-            progressView.progress = Float(progress)/100
-            progressView.isHidden = false
-        }
-
         guard let image = item.image,
               let url = URL(string: image) else { return }
 
@@ -68,21 +65,21 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
     }
 
     private func setupSubviews() {
+        addSubview(subtitleLabel)
+        subtitleLabel.snp.makeConstraints {
+            $0.leading.bottom.trailing.equalToSuperview()
+        }
+
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
-            $0.leading.bottom.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(subtitleLabel.snp.top).offset(-2)
         }
 
         addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
             $0.bottom.equalTo(titleLabel.snp.top).offset(-8)
-        }
-
-        imageView.addSubview(progressView)
-        progressView.snp.makeConstraints {
-            $0.leading.bottom.trailing.equalToSuperview()
-            $0.height.equalTo(4)
         }
 
         addSubview(lockImageView)
@@ -92,4 +89,3 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         }
     }
 }
-

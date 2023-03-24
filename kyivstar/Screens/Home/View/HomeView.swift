@@ -17,9 +17,9 @@ class HomeView: UIView {
 
         view.register(cell: PromotionCollectionViewCell.self)
         view.register(cell: CategoryCollectionViewCell.self)
-        view.register(cell: NoveltyCollectionViewCell.self)
-        view.register(cell: ChildrenCollectionViewCell.self)
-        view.register(cell: EducationalCollectionViewCell.self)
+        view.register(cell: MovieCollectionViewCell.self)
+        view.register(cell: ChannelCollectionViewCell.self)
+        view.register(cell: EPGCollectionViewCell.self)
 
         view.register(SectionHeaderView.self,
                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
