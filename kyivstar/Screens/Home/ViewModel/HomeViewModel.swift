@@ -67,7 +67,9 @@ class HomeViewModel: NSObject {
             guard let self else { return }
             DispatchQueue.main.async {
                 var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-                let sections = snapshots.map { $0.section }
+                let sections = snapshots
+                    .sorted { $0.section.layout.rawValue < $1.section.layout.rawValue}
+                    .map { $0.section }
                 snapshot.appendSections(sections)
                 self.sections = sections
                 snapshots.forEach {
@@ -98,10 +100,6 @@ class HomeViewModel: NSObject {
         service.getPromotions { [weak self] in
             self?.snapshots.append($0)
             group.leave()
-        }
-
-        group.notify(queue: .main) {
-            print("Done!")
         }
     }
 }
