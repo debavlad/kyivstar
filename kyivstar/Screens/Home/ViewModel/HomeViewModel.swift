@@ -61,10 +61,11 @@ class HomeViewModel: NSObject {
                 return UICollectionReusableView()
             }
 
-            let title = self.sections[indexPath.section].title
-            header.configure(with: title)
+            let section = self.sections[indexPath.section]
+            header.configure(with: section.title,
+                             canBeDeleted: section.canBeDeleted ?? false)
             header.deleteCallback = { [weak self] in
-                self?.snapshots.removeAll { $0.section.title == title }
+                self?.snapshots.removeAll { $0.section.title == section.title }
             }
             return header
         }

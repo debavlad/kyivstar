@@ -13,17 +13,13 @@ class HomeView: UIView {
     lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero,
                                     collectionViewLayout: createCollectionLayout())
-        view.backgroundColor = .systemBackground
-
+        view.register(header: SectionHeaderView.self)
         view.register(cell: PromotionCollectionViewCell.self)
         view.register(cell: CategoryCollectionViewCell.self)
         view.register(cell: MovieCollectionViewCell.self)
         view.register(cell: ChannelCollectionViewCell.self)
         view.register(cell: EPGCollectionViewCell.self)
-
-        view.register(SectionHeaderView.self,
-                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                      withReuseIdentifier: SectionHeaderView.reuseIdentifier)
+        view.backgroundColor = .systemBackground
         return view
     }()
 

@@ -10,13 +10,13 @@ import UIKit
 class SectionHeaderView: UICollectionReusableView {
     var deleteCallback: (() -> Void)?
 
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
     }()
 
-    let deleteButton: UIButton = {
+    private let deleteButton: UIButton = {
         let button = UIButton()
         button.contentHorizontalAlignment = .trailing
         button.setTitle("Del", for: .normal)
@@ -34,8 +34,9 @@ class SectionHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with title: String) {
+    func configure(with title: String, canBeDeleted: Bool) {
         titleLabel.text = title
+        deleteButton.isHidden = !canBeDeleted
     }
 
     private func setupSubviews() {

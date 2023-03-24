@@ -10,4 +10,5 @@ import Foundation
 struct Section: Hashable {
     let title: String
     let layout: Layout
+    var canBeDeleted: Bool? = false
 }

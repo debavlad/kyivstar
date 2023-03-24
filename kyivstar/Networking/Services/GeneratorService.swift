@@ -65,7 +65,7 @@ class GeneratorService: GeneratorServiceProtocol {
             var snapshots: [Snapshot] = []
 
             movieSeriesGroup.forEach { group in
-                let section = Section(title: group.name, layout: .movieSeries)
+                let section = Section(title: group.name, layout: .movieSeries, canBeDeleted: group.canBeDeleted)
                 let snapshot = Snapshot(
                     section: section,
                     items: group.assets.map {
@@ -75,7 +75,7 @@ class GeneratorService: GeneratorServiceProtocol {
             }
 
             tvChannelGroup.forEach { group in
-                let section = Section(title: group.name, layout: .liveChannel)
+                let section = Section(title: group.name, layout: .liveChannel, canBeDeleted: group.canBeDeleted)
                 let snapshot = Snapshot(
                     section: section,
                     items: group.assets.map {
@@ -85,7 +85,7 @@ class GeneratorService: GeneratorServiceProtocol {
             }
 
             epgGroup.forEach { group in
-                let section = Section(title: group.name, layout: .epg)
+                let section = Section(title: group.name, layout: .epg, canBeDeleted: group.canBeDeleted)
                 let snapshot = Snapshot(
                     section: section,
                     items: group.assets.map {

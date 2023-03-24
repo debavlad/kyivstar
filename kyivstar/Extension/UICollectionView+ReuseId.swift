@@ -17,9 +17,7 @@ extension UICollectionView {
     func register<T: UICollectionViewCell>(cell: T.Type) {
         register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
     }
-}
 
-extension UICollectionView {
     func register<T: UICollectionReusableView>(header: T.Type) {
         register(T.self,
                  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
