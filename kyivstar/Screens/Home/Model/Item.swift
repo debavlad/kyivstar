@@ -12,5 +12,6 @@ struct Item: Hashable {
     let image: String?
     var purchased: Bool?
     var description: String?
+    var progress: Int?
 }
 

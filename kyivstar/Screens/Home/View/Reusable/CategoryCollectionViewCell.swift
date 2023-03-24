@@ -12,7 +12,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let view = UIImageView()
         view.backgroundColor = .systemGray5
         view.contentMode = .scaleAspectFill
-        view.layer.cornerRadius = 24
+        view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
         return view
     }()

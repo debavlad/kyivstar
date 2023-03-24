@@ -13,7 +13,7 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.backgroundColor = .systemGray5
-        view.layer.cornerRadius = 24
+        view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
         return view
     }()

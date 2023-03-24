@@ -12,7 +12,7 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         let view = UIImageView()
         view.backgroundColor = .systemGray5
         view.contentMode = .scaleAspectFill
-        view.layer.cornerRadius = 24
+        view.layer.cornerRadius = 16
         view.layer.masksToBounds = true
         return view
     }()
@@ -21,6 +21,14 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         let image = UIImage(named: "Lock")
         let view = UIImageView(image: image)
         view.contentMode = .scaleAspectFit
+        return view
+    }()
+
+    private let progressView: UIProgressView = {
+        let view = UIProgressView()
+        view.progressTintColor = .dodgerBlue
+        view.backgroundColor = .gunmetal
+        view.isHidden = true
         return view
     }()
 
@@ -43,6 +51,11 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
     func configure(with item: Item) {
         titleLabel.text = item.title
         lockImageView.isHidden = item.purchased ?? false
+        
+        if let progress = item.progress, progress > 0 {
+            progressView.progress = Float(progress)/100
+            progressView.isHidden = false
+        }
 
         guard let image = item.image,
               let url = URL(string: image) else { return }
@@ -64,6 +77,12 @@ class NoveltyCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
             $0.bottom.equalTo(titleLabel.snp.top).offset(-8)
+        }
+
+        imageView.addSubview(progressView)
+        progressView.snp.makeConstraints {
+            $0.leading.bottom.trailing.equalToSuperview()
+            $0.height.equalTo(4)
         }
 
         addSubview(lockImageView)
