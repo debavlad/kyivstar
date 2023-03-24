@@ -52,13 +52,21 @@ class HomeViewModel: NSObject {
                 }
         }
 
-        source.supplementaryViewProvider = { collectionView, kind, indexPath in
-            let header = collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionHeader,
-                withReuseIdentifier: SectionHeaderView.reuseIdentifier, for: indexPath) as? SectionHeaderView
+        source.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+            guard let self,
+                  let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: UICollectionView.elementKindSectionHeader,
+                    withReuseIdentifier: SectionHeaderView.reuseIdentifier,
+                    for: indexPath) as? SectionHeaderView else {
+                return UICollectionReusableView()
+            }
+
             let title = self.sections[indexPath.section].title
-            header?.configure(with: title, section: indexPath.section, delegate: nil)
-            return header!
+            header.configure(with: title)
+            header.deleteCallback = { [weak self] in
+                self?.snapshots.removeAll { $0.section.title == title }
+            }
+            return header
         }
 
         $snapshots.sink { completion in

@@ -7,13 +7,8 @@
 
 import UIKit
 
-protocol SectionHeaderDelegate: AnyObject {
-    func deleteButtonTapped(in section: Int)
-}
-
 class SectionHeaderView: UICollectionReusableView {
-    weak var delegate: SectionHeaderDelegate?
-    private var section: Int?
+    var deleteCallback: (() -> Void)?
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -39,10 +34,8 @@ class SectionHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with title: String, section: Int, delegate: SectionHeaderDelegate?) {
+    func configure(with title: String) {
         titleLabel.text = title
-        self.section = section
-        self.delegate = delegate
     }
 
     private func setupSubviews() {
@@ -61,8 +54,6 @@ class SectionHeaderView: UICollectionReusableView {
     }
 
     @objc private func deleteButtonTapped() {
-        if let section = section {
-            delegate?.deleteButtonTapped(in: section)
-        }
+        deleteCallback?()
     }
 }
